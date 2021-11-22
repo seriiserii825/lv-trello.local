@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Task::class, function (Faker $faker) {
     return [
-        //
+        'name' => $faker->word,
+        'card_id' => $faker->numberBetween(1, 60)
     ];
 });
