@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\DeskStoreRequest;
 use App\Http\Resources\DeskResource;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class DeskController extends Controller
 {
@@ -16,13 +17,13 @@ class DeskController extends Controller
      */
     public function index()
     {
-        return DeskResource::collection(Desk::query()->with('lists')->get());
+        return DeskResource::collection(Desk::all());
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      */
     public function store(DeskStoreRequest $request)
     {
@@ -34,18 +35,18 @@ class DeskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      */
-    public function show($id)
+    public function show(Desk $desk)
     {
-        return new DeskResource(Desk::with('lists')->findOrFail($id));
+        return new DeskResource($desk);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      */
     public function update(DeskStoreRequest $request, Desk $desk)
     {
@@ -56,11 +57,13 @@ class DeskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Desk $desk)
     {
-        //
+        // Postman  method_ DELETE
+        $desk->delete();
+        return response(null, 204);
     }
 }
