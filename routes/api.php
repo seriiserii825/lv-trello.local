@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-    'desks' => 'Api\DeskController'
+    'desks' => \App\Http\Controllers\Api\V1\DeskController::class
 ]);
