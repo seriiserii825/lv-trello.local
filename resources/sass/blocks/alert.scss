@@ -1,0 +1,22 @@
+.alert {
+    margin-bottom: 3rem;
+    li {
+        display: block;
+        margin-bottom: 0.6rem;
+        padding: 1rem 2rem;
+        border: 1px solid transparent;
+        border-radius: 0.6rem;
+    }
+    &.alert-danger {
+        li {
+            color: white;
+            background-color: rgba(darkred, 0.3);
+            border-color: darkred;
+        }
+    }
+    &.alert-success {
+        color: white;
+        background-color: rgba(darkgreen, 0.3);
+        border-color: darkgreen;
+    }
+}

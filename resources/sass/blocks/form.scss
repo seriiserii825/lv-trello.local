@@ -1,0 +1,22 @@
+form {
+    input {
+        display: block;
+        margin-bottom: 2rem;
+        width: 34rem;
+        height: 4rem;
+        text-indent: 0.6rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ccc;
+        &.is-invalid {
+            border-color: red;
+        }
+    }
+    .info {
+        margin-bottom: 3rem;
+        font-size: 1.4rem;
+        a {
+            text-decoration: underline;
+            color: green;
+        }
+    }
+}
