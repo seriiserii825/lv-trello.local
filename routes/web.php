@@ -21,3 +21,4 @@ Route::post('/register', [\App\Http\Controllers\UserController::class, 'store'])
 Route::get('/login', [\App\Http\Controllers\UserController::class, 'loginForm'])->name('user.login');
 Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('user.auth');
 Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('user.logout');
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');

@@ -217,3 +217,19 @@ form .info a {
   font-size: 8rem;
   color: white;
 }
+
+.admin-layout__wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+.admin-layout__sidebar {
+  flex: 0 0 20rem;
+  padding: 3rem;
+  color: white;
+  background-color: #333;
+}
+.admin-layout__content {
+  flex: 1;
+  padding: 3rem;
+}
