@@ -144,6 +144,7 @@ form .info a {
   align-items: center;
   padding: 0 3rem;
   height: 4rem;
+  text-decoration: none;
   color: white;
   background-color: dodgerblue;
   border: none;
@@ -154,9 +155,23 @@ form .info a {
 .btn:hover {
   background-color: #0077ea;
 }
+.btn.btn--contrast {
+  background: #ff6f00;
+}
+.btn.btn--contrast:hover {
+  background-color: #994300;
+}
 
 .alert {
-  margin-bottom: 3rem;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 3rem;
+  width: auto;
+  z-index: 10000;
+  border-radius: 0.8rem;
+  border: 2px solid transparent;
 }
 .alert li {
   display: block;
@@ -165,14 +180,19 @@ form .info a {
   border: 1px solid transparent;
   border-radius: 0.6rem;
 }
+.alert.alert-danger {
+  color: white;
+  background-color: rgba(139, 0, 0, 0.6);
+  border-color: darkred;
+}
 .alert.alert-danger li {
   color: white;
-  background-color: rgba(139, 0, 0, 0.3);
+  background-color: rgba(139, 0, 0, 0.6);
   border-color: darkred;
 }
 .alert.alert-success {
   color: white;
-  background-color: rgba(0, 100, 0, 0.3);
+  background-color: rgba(0, 100, 0, 0.6);
   border-color: darkgreen;
 }
 
@@ -216,6 +236,14 @@ form .info a {
   margin-bottom: 3rem;
   font-size: 8rem;
   color: white;
+}
+.home__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__footer .btn {
+  margin-right: 1rem;
 }
 
 .admin-layout__wrap {

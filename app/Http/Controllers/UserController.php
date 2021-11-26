@@ -47,7 +47,6 @@ class UserController extends Controller
         ])) {
             session()->flash('success', 'User is logged in');
             return redirect()->route('admin.index');
-//            return Auth::user()->is_admin ? redirect()->route('admin.index') : redirect()->route('home');
         }
         return redirect()->route('login.form')->with('error', 'Login or password is wrong...');
     }
@@ -55,6 +54,6 @@ class UserController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('user.login');
+        return redirect()->route('user.login')->with('success', 'User was logged out');
     }
 }
