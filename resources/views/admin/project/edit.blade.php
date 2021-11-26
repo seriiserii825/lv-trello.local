@@ -5,6 +5,7 @@
         @csrf
         @method('PUT')
         <input type="text" name="title" value="{{ $project->title }}" placeholder="Title">
+        <input type="text" name="slug" value="{{ $project->slug }}" placeholder="Slug">
         <button type="submit" class="btn">Edit</button>
     </form>
 @endsection

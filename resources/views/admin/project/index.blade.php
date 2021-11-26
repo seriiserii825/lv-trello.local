@@ -11,6 +11,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>Slug</th>
                 <th>Date</th>
                 <th>Actions</th>
             </tr>
@@ -18,6 +19,7 @@
                 <tr>
                     <td>{{ $project->id }}</td>
                     <td>{{ $project->title }}</td>
+                    <td>{{ $project->slug }}</td>
                     <td>{{ $project->created_at }}</td>
                     <td>
                         <div class="admin-table__actions">
