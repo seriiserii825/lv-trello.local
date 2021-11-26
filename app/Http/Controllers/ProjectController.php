@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::query()->orderByDesc('created_at')->get();
         return view('admin.project.index', compact('projects'));
     }
 
@@ -31,12 +31,11 @@ class ProjectController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
      */
     public function store(ProjectRequest $request)
     {
         Project::create($request->all());
-        redirect()->route('projects.index')->with('Project was created');
+        return redirect()->route('projects.index')->with('Project was created');
     }
 
     /**
@@ -54,11 +53,11 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $project = Project::find($id);
+        return view('admin.project.edit', compact('project'));
     }
 
     /**
@@ -66,21 +65,23 @@ class ProjectController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectRequest $request, $id)
     {
-        //
+        $project = Project::find($id);
+        $project->update($request->all());
+        return redirect()->route('projects.index')->with('Project was updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $project = Project::find($id);
+        $project->delete();
+        return redirect()->route('projects.index')->with('success', 'Project was deleted');
     }
 }

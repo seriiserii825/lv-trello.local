@@ -35,13 +35,13 @@
         <div class="admin-layout__sidebar">
             <ul class="sidebar-list">
                 <li>
-                    <a href="{{ route('user.logout') }}">Logout</a>
+                    <a class="btn btn--danger" href="{{ route('user.logout') }}">Logout</a>
+                </li>
+                <li>
+                    <a class="btn btn--success" href="{{ route('home') }}">Home</a>
                 </li>
                 <li>
                     <a href="{{ route('projects.index') }}">Projects</a>
-                </li>
-                <li>
-                    <a href="{{ route('projects.create') }}">New project</a>
                 </li>
             </ul>
         </div>

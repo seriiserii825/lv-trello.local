@@ -1,5 +1,5 @@
 .btn {
-    display: flex;
+    display: inline-flex !important;
     justify-content: center;
     align-items: center;
     padding: 0 3rem;
@@ -18,6 +18,18 @@
         background: $contrast;
         &:hover {
             background-color: darken($contrast, 20%);
+        }
+    }
+    &.btn--danger {
+        background: red;
+        &:hover {
+            background-color: darken(red, 20%);
+        }
+    }
+    &.btn--success {
+        background: green;
+        &:hover {
+            background-color: darken(green, 20%);
         }
     }
 }
