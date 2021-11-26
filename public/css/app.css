@@ -257,7 +257,32 @@ form .info a {
   color: white;
   background-color: #333;
 }
+.admin-layout__title {
+  margin-bottom: 6rem;
+}
 .admin-layout__content {
   flex: 1;
   padding: 3rem;
+}
+
+.sidebar-list li {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #444;
+  border-radius: 0.4rem;
+}
+
+.admin-table {
+  border-collapse: collapse;
+}
+.admin-table th,
+.admin-table td {
+  padding: 1rem 2rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+.admin-table th {
+  color: white;
+  background-color: #444;
 }

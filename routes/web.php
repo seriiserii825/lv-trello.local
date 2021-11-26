@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->
 
 Route::group(['prefix' => 'admin', "middleware" => "admin"], function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
+    Route::resource('/projects', '\App\Http\Controllers\ProjectController');
 });
 
 Route::group(['middleware' => 'guest'], function () {
