@@ -6,7 +6,7 @@
         <a class="btn" href="{{ route('projects.create') }}">New project</a>
     </div>
 
-    @if(count($projects))
+    @if (count($projects))
         <table class="admin-table">
             <tr>
                 <th>Id</th>
@@ -15,20 +15,21 @@
                 <th>Date</th>
                 <th>Actions</th>
             </tr>
-            @foreach($projects as $project)
-                <tr>
+            @foreach ($projects as $project)
+                <tr style="background: {{ $project->color }};">
                     <td>{{ $project->id }}</td>
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>{{ $project->created_at }}</td>
                     <td>
                         <div class="admin-table__actions">
-                            <a href="{{ route('projects.edit', ['project' => $project->id]) }}" class="btn">Edit</a>
+                            <a href="{{ route('projects.edit', ['project' => $project->id]) }}"
+                                class="btn">Edit</a>
                             <form action="{{ route('projects.destroy', ['project' => $project->id]) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('Do you want to delete?','Yes')"
-                                        class="btn btn--danger">Delete
+                                    class="btn btn--danger">Delete
                                 </button>
                             </form>
                         </div>

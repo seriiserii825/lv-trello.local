@@ -66,7 +66,7 @@ class ProjectController extends Controller
      * @param \Illuminate\Http\Request $request
      * @param int $id
      */
-    public function update(ProjectRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $project = Project::find($id);
         $project->update($request->all());

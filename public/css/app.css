@@ -117,25 +117,37 @@ a {
   color: white;
 }
 
-form input {
+.form-group {
+  margin-bottom: 3rem;
+}
+.form-group--flex {
+  display: flex;
+  align-items: center;
+}
+.form-group--flex input {
+  margin-right: 1rem;
+}
+.form input {
   display: block;
-  margin-bottom: 2rem;
   width: 34rem;
   height: 4rem;
   text-indent: 0.6rem;
   border-radius: 0.5rem;
   border: 1px solid #ccc;
 }
-form input.is-invalid {
+.form input.is-invalid {
   border-color: red;
 }
-form .info {
+.form .info {
   margin-bottom: 3rem;
   font-size: 1.4rem;
 }
-form .info a {
+.form .info a {
   text-decoration: underline;
   color: green;
+}
+.form .pickr button {
+  border: 1px solid maroon;
 }
 
 .alert {
@@ -277,6 +289,8 @@ form .info a {
 }
 .admin-table__actions .btn {
   margin-right: 1rem;
+  padding: 0 1rem;
+  height: 3rem;
 }
 
 .btn {

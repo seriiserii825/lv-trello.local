@@ -1,7 +1,16 @@
-form {
+.form {
+    &-group {
+        margin-bottom: 3rem;
+        &--flex {
+            display: flex;
+            align-items: center;
+            input {
+                margin-right: 1rem;
+            }
+        }
+    }
     input {
         display: block;
-        margin-bottom: 2rem;
         width: 34rem;
         height: 4rem;
         text-indent: 0.6rem;
@@ -17,6 +26,11 @@ form {
         a {
             text-decoration: underline;
             color: green;
+        }
+    }
+    .pickr {
+        button {
+            border: 1px solid maroon;
         }
     }
 }
