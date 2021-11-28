@@ -1,0 +1,11 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+    background-color: black;
+    .btn {
+        height: 3rem;
+    }
+}

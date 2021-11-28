@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/login', [\App\Http\Controllers\UserController::class, 'loginForm'])->name('user.login');
 Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('user.logout');
+Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('user.auth');
 
 Route::group(['prefix' => 'admin', "middleware" => "admin"], function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
@@ -28,9 +31,8 @@ Route::group(['prefix' => 'admin', "middleware" => "admin"], function () {
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', [\App\Http\Controllers\UserController::class, 'create'])->name('user.create');
     Route::post('/register', [\App\Http\Controllers\UserController::class, 'store'])->name('user.store');
-    Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('user.auth');
 });
 
-Route::fallback(function () {
-    return redirect()->route('home');
-});
+//Route::fallback(function () {
+//    return redirect()->route('home');
+//});
