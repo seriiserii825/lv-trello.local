@@ -12,9 +12,9 @@
 <body>
     <div class="top-bar">
         <h2 class="top-bar__title">
-            @if ($user_email)
+            {{-- @if ($user_email)
                 {{ $user_email }}
-            @endif
+            @endif --}}
         </h2>
         <ul class="top-bar__list">
             @if (Auth::user()->is_admin)
