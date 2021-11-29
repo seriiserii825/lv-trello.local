@@ -337,7 +337,12 @@ a {
   color: white;
   background-color: black;
 }
+.top-bar__list {
+  display: flex;
+  align-items: center;
+}
 .top-bar .btn {
+  margin-left: 3rem;
   height: 3rem;
 }
 
@@ -381,4 +386,31 @@ a {
 
 .main {
   padding: 3rem 0;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.project-table tr {
+  display: flex;
+  justify-content: space-between;
+}
+.project-table td,
+.project-table th {
+  padding: 1rem 2rem;
+  width: 20%;
+  border: 1px solid #ccc;
+}
+.project-table th {
+  background-color: white;
+}
+
+.single-project {
+  padding: 3rem 0;
+  min-height: 100vh;
+}
+.single-project__title {
+  margin-bottom: 3rem;
+  font-size: 3rem;
 }

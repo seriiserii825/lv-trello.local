@@ -23,6 +23,8 @@
                     <td>{{ $project->created_at }}</td>
                     <td>
                         <div class="admin-table__actions">
+                            <a href="{{ route('project.single', ['slug' => $project->slug]) }}"
+                                class="btn btn--contrast">View </a>
                             <a href="{{ route('projects.edit', ['project' => $project->id]) }}"
                                 class="btn">Edit</a>
                             <form action="{{ route('projects.destroy', ['project' => $project->id]) }}" method="post">

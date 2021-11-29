@@ -16,13 +16,18 @@
                 {{ $user_email }}
             @endif
         </h2>
-        <a class="btn btn--danger" href="{{ route('user.logout') }}">Logout</a>
+        <ul class="top-bar__list">
+            @if (Auth::user()->is_admin)
+                <li>
+                    <a class="btn btn--conrast" href="{{ route('admin.index') }}">Admin</a>
+                </li>
+            @endif
+            <li>
+                <a class="btn btn--danger" href="{{ route('user.logout') }}">Logout</a>
+            </li>
+        </ul>
     </div>
-    <main class="main">
-        <div class="container">
-            @yield('content')
-        </div>
-    </main>
+    @yield('content')
 </body>
 
 </html>

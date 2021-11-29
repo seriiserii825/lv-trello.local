@@ -1,0 +1,17 @@
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+        display: flex;
+        justify-content: space-between;
+    }
+    td,
+    th {
+        padding: 1rem 2rem;
+        width: 20%;
+        border: 1px solid #ccc;
+    }
+    th {
+        background-color: white;
+    }
+}
