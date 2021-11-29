@@ -47,6 +47,9 @@
                     <li>
                         <a href="{{ route('columns.index') }}">Columns</a>
                     </li>
+                    <li>
+                        <a href="{{ route('cards.index') }}">Cards</a>
+                    </li>
                 </ul>
             </div>
             <div class="admin-layout__content">

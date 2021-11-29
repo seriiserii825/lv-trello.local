@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', "middleware" => "admin"], function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
     Route::resource('/projects', '\App\Http\Controllers\Admin\ProjectController');
     Route::resource('/columns', '\App\Http\Controllers\Admin\ColumnController');
+    Route::resource('/cards', '\App\Http\Controllers\Admin\CardController');
 });
 
 Route::group(['middleware' => 'guest'], function () {

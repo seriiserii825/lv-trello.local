@@ -47,6 +47,10 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    public function cards(){
+        return $this->hasMany('cards');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

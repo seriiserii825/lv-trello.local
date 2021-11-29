@@ -127,6 +127,7 @@ a {
 .form-group--flex input {
   margin-right: 1rem;
 }
+.form select,
 .form input {
   display: block;
   width: 34rem;
@@ -135,8 +136,22 @@ a {
   border-radius: 0.5rem;
   border: 1px solid #ccc;
 }
+.form select.is-invalid,
 .form input.is-invalid {
   border-color: red;
+}
+.form select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 5px;
+  cursor: pointer;
+}
+.form select option {
+  padding: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-indent: 1.6rem;
 }
 .form .info {
   margin-bottom: 3rem;
