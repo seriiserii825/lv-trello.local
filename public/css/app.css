@@ -420,6 +420,9 @@ a {
 .project-table th {
   background-color: white;
 }
+.project-table td {
+  background-color: #e4e4ea;
+}
 
 .single-project {
   padding: 3rem 0;
@@ -432,4 +435,18 @@ a {
 
 .admin-columns__title {
   margin-bottom: 3rem;
+}
+
+.card {
+  margin: 1rem;
+  padding: 2rem;
+  background-color: #f3f3f3;
+  border-radius: 0.6rem;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+  margin-bottom: 2rem;
+}
+.card p {
+  font-size: 1.4rem;
 }

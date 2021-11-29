@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Column;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
@@ -10,11 +12,15 @@ class Card extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 
     public function project()
     {
-        return $this->belongsTo('App\Models\Project');
+        return $this->belongsTo(Project::class);
+    }
+
+    public function column(){
+        return $this->belongsTo(Column::class);
     }
 }

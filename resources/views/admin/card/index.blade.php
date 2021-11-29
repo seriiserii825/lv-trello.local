@@ -24,12 +24,11 @@
                     <td>{{ $card->title }}</td>
                     <td>{{ $card->slug }}</td>
                     <td>{{ $card->user->name }}</td>
-                    <td>{{ $card->project->title }}</td>
-                    <td>{{ $card->column_id }}</td>
+                    <td style="background: {{ $card->project->color }}">{{ $card->project->title }}</td>
+                    <td>{{ $card->column->title }}</td>
                     <td>{{ $card->created_at }}</td>
                     <td>
                         <div class="admin-table__actions">
-                            <a href="#" class="btn btn--contrast">View </a>
                             <a href="{{ route('cards.edit', ['card' => $card->id]) }}" class="btn">Edit</a>
                             <form action="{{ route('cards.destroy', ['card' => $card->id]) }}" method="post">
                                 @csrf

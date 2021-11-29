@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Card;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -27,7 +28,9 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $fillable = ['title', 'slug', 'color'];
-    public function cards(){
-        return $this->hasMany('cards');
+
+    public function cards()
+    {
+        return $this->hasMany(Card::class);
     }
 }

@@ -5,17 +5,34 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-            <input id="title" type="text" name="title" value="{{ $card->title }}" placeholder="Title">
+            <input id="title" type="text" name="title" placeholder="Title" value="{{ $card->title }}">
         </div>
         <div class="form-group">
-            <input id="slug" type="text" name="slug" value="{{ $card->slug }}" placeholder="Slug">
+            <input id="slug" type="text" name="slug" placeholder="Slug" value="{{ $card->slug }}">
         </div>
         @if(count($projects))
             <div class="form-group">
-                <input id="project_id" type="text" name="project_id">
                 <select name="project_id" id="project_id">
                     @foreach($projects as $project)
-                        <option value="{{ $project->id }}">{{ $project->title }}</option>
+                        <option @if($project->id === $card->project_id) selected @endif value="{{ $project->id }}">{{ $project->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+        @endif
+        @if(count($columns))
+            <div class="form-group">
+                <select name="column_id" id="column_id">
+                    @foreach($columns as $column)
+                        <option @if($column->id === $card->column_id) selected @endif value="{{ $column->id }}">{{ $column->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+        @endif
+        @if(count($users))
+            <div class="form-group">
+                <select name="user_id" id="user_id">
+                    @foreach($users as $user)
+                        <option @if($user->id === $card->user_id) selected @endif value="{{ $user->id }}">{{ $user->name }}</option>
                     @endforeach
                 </select>
             </div>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Column;
 use App\Models\Project;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,8 +18,9 @@ class ProjectController extends Controller
     }
     public function single(Request $request)
     {
-        $user_email = Auth::user() ? Auth::user()->email : '';
         $project = Project::where('slug', $request->slug)->first();
-        return view('projects.single', compact('project', 'user_email'));
+        $cards = $project->cards;
+        $columns = Column::all();
+        return view('projects.single', compact('project', 'cards', 'columns'));
     }
 }

@@ -40,10 +40,6 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'title' => ['required', 'unique:cards', 'max:255'],
-            'slug' => ['required', 'unique:cards', 'max:255']
-        ]);
         Card::create($request->all());
         return redirect()->route('cards.index')->with('Card was created');
     }
@@ -67,7 +63,10 @@ class CardController extends Controller
     public function edit($id)
     {
         $card = Card::find($id);
-        return view('admin.card.edit', compact('card'));
+        $projects = Project::all();
+        $columns = Column::all();
+        $users = User::all();
+        return view('admin.card.edit', compact('card', 'projects', 'columns', 'users'));
     }
 
     /**
