@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUserIdColumnProject extends Migration
+class RemoveColumnUserIdProjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddUserIdColumnProject extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained();
+            //
+            $table->dropColumn('user_id');
         });
     }
 
@@ -26,7 +27,7 @@ class AddUserIdColumnProject extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            Schema::dropColumn('user_id');
+            //
         });
     }
 }
