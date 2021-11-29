@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,13 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/login', [\App\Http\Controllers\UserController::class, 'loginForm'])->name('user.login');
 Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('user.logout');
 Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+Route::get('/projects/{slug}', [ProjectController::class, 'single'])->name('project.single');
 Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('user.auth');
 
 Route::group(['prefix' => 'admin', "middleware" => "admin"], function () {

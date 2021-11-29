@@ -10,9 +10,6 @@
         <div class="form-group">
             <input id="slug" type="text" name="slug" value="{{ $project->slug }}" placeholder="Slug">
         </div>
-        <div class="form-group">
-            <input id="user_id" type="text" name="user_id" value="{{ $project->user_id }}" placeholder="Slug">
-        </div>
         <div class="form-group form-group--flex">
             <input id="js-color" type="text" name="color" value="{{ $project->color }}" placeholder="Color">
             <div class="color-picker"></div>

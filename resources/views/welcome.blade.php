@@ -36,8 +36,14 @@
         <div class="home__content">
             <h1>Welcome to project manager</h1>
             <footer class="home__footer">
-                <a class="btn" href="{{ route('user.login') }}">Go to login page</a>
-                <a class="btn btn--contrast" href="{{ route('admin.index') }}">Admin</a>
+                @if (Auth::check() && Auth::user()->is_admin)
+                    <a class="btn" href="{{ route('project.index') }}">View projects</a>
+                    <a class="btn btn--contrast" href="{{ route('admin.index') }}">Admin</a>
+                @elseif (Auth::check())
+                    <a class="btn" href="{{ route('project.index') }}">View projects</a>
+                @else
+                    <a class="btn" href="{{ route('user.login') }}">Go to login page</a>
+                @endif
             </footer>
         </div>
     </div>

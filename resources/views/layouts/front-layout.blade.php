@@ -10,15 +10,19 @@
 </head>
 
 <body>
-<div class="top-bar">
-    <h2 class="top-bar__title">serii@mail.ru</h2>
-    <a class="btn btn--danger" href="{{ route('user.logout') }}">Logout</a>
-</div>
-<main class="main">
-    <div class="container">
-        @yield('content')
+    <div class="top-bar">
+        <h2 class="top-bar__title">
+            @if ($user_email)
+                {{ $user_email }}
+            @endif
+        </h2>
+        <a class="btn btn--danger" href="{{ route('user.logout') }}">Logout</a>
     </div>
-</main>
+    <main class="main">
+        <div class="container">
+            @yield('content')
+        </div>
+    </main>
 </body>
 
 </html>
