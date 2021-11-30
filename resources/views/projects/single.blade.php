@@ -12,20 +12,7 @@
                                 <div class="project-table__row">
                                     <div class="card">
                                         <h2>{{ $card->title }}</h2>
-                                        <form action="{{ route('cards.update', ['card' => $card->id]) }}" method="post">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="form-group">
-                                                <select name="column_id" id="column_id">
-                                                    @foreach ($columns as $column)
-                                                        <option @if ($column->id === $card->column_id) selected
-                                                            @endif value="{{ $column->id }}">{{ $column->title }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <input type="submit" class="btn" value="Update">
-                                        </form>
+                                        <x-card-select></x-card-select>
                                     </div>
                                 </div>
                             @endif
@@ -38,20 +25,7 @@
                                 <div class="project-table__row">
                                     <div class="card">
                                         <h2>{{ $card->title }}</h2>
-                                        <form action="{{ route('cards.update', ['card' => $card->id]) }}" method="post">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="form-group">
-                                                <select name="column_id" id="column_id">
-                                                    @foreach ($columns as $column)
-                                                        <option @if ($column->id === $card->column_id) selected
-                                                            @endif value="{{ $column->id }}">{{ $column->title }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <input type="submit" class="btn" value="Update">
-                                        </form>
+
                                     </div>
                                 </div>
                             @endif
@@ -64,20 +38,7 @@
                                 <div class="project-table__row">
                                     <div class="card">
                                         <h2>{{ $card->title }}</h2>
-                                        <form action="{{ route('cards.update', ['card' => $card->id]) }}" method="post">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="form-group">
-                                                <select name="column_id" id="column_id">
-                                                    @foreach ($columns as $column)
-                                                        <option @if ($column->id === $card->column_id) selected
-                                                            @endif value="{{ $column->id }}">{{ $column->title }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <input type="submit" class="btn" value="Update">
-                                        </form>
+
                                     </div>
                                 </div>
                             @endif
@@ -90,20 +51,7 @@
                                 <div class="project-table__row">
                                     <div class="card">
                                         <h2>{{ $card->title }}</h2>
-                                        <form action="{{ route('cards.update', ['card' => $card->id]) }}" method="post">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="form-group">
-                                                <select name="column_id" id="column_id">
-                                                    @foreach ($columns as $column)
-                                                        <option @if ($column->id === $card->column_id) selected
-                                                            @endif value="{{ $column->id }}">{{ $column->title }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <input type="submit" class="btn" value="Update">
-                                        </form>
+
                                     </div>
                                 </div>
                             @endif
@@ -112,24 +60,11 @@
                     <div class="project-table__column">
                         <h3 class="project-table__title">Test</h3>
                         @foreach ($cards as $card)
-                            @if ($card->column_id === 5)
+                            @if ($card->column_id === 6)
                                 <div class="project-table__row">
                                     <div class="card">
                                         <h2>{{ $card->title }}</h2>
-                                        <form action="{{ route('cards.update', ['card' => $card->id]) }}" method="post">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="form-group">
-                                                <select name="column_id" id="column_id">
-                                                    @foreach ($columns as $column)
-                                                        <option @if ($column->id === $card->column_id) selected
-                                                            @endif value="{{ $column->id }}">{{ $column->title }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <input type="submit" class="btn" value="Update">
-                                        </form>
+                                        <x-card-select></x-card-select>
                                     </div>
                                 </div>
                             @endif

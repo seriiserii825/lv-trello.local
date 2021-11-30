@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Card;
 use App\Models\Column;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -21,5 +22,12 @@ class ProjectController extends Controller
         $cards = $project->cards;
         $columns = Column::all();
         return view('projects.single', compact('project', 'cards', 'columns'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $card = Card::find($id);
+        $card->update($request->all());
+        return redirect()->route('project.index')->with('Card was updated');
     }
 }
