@@ -27,7 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Project extends Model
 {
-    protected $fillable = ['title', 'slug', 'color'];
+    protected $fillable = ['title', 'slug', 'color', 'user_id'];
 
     public function cards()
     {

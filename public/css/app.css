@@ -164,6 +164,16 @@ a {
 .form .pickr button {
   border: 1px solid maroon;
 }
+.form-radio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+.form-radio label {
+  font-size: 1.4rem;
+}
 
 .alert {
   position: fixed;
@@ -448,4 +458,12 @@ a {
 }
 .card p {
   font-size: 1.4rem;
+}
+.card__title {
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #ccc;
+}
+.card .btn {
+  margin-top: 2rem;
 }

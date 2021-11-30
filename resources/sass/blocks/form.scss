@@ -45,4 +45,14 @@
             border: 1px solid maroon;
         }
     }
+    &-radio {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.6rem;
+        cursor: pointer;
+        label {
+            font-size: 1.4rem;
+        }
+    }
 }

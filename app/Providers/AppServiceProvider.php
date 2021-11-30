@@ -26,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        Blade::component('card-select', CardSelect::class);
+//        Blade::component('card-select', CardSelect::class);
     }
 }

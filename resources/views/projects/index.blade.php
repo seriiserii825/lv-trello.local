@@ -7,7 +7,7 @@
                     <a href="{{ route('project.single', ['slug' => $project->slug]) }}" class="project"
                         style="background: {{ $project->color }}">
                         <h3 class="project__title">{{ $project->title }}</h3>
-                        <div class="project__tasks">3</div>
+                        <div class="project__tasks">{{ count($project->cards) }}</div>
                     </a>
                 @endforeach
             @else

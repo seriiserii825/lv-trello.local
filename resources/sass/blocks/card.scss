@@ -10,5 +10,13 @@
     p {
         font-size: 1.4rem;
     }
+    &__title {
+        margin-bottom: 3rem;
+        font-size: 1.6rem;
+        border-bottom: 1px solid #ccc;
+    }
+    .btn {
+        margin-top: 2rem;
+    }
 }
 

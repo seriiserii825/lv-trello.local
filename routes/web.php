@@ -22,6 +22,7 @@ Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->
 Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
 Route::get('/projects/{slug}', [ProjectController::class, 'single'])->name('project.single');
 Route::put('/projects/{id}', [ProjectController::class, 'update'])->name('project.update');
+Route::delete('/projects/{id}', [ProjectController::class, 'delete'])->name('project.delete');
 Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('user.auth');
 
 Route::group(['prefix' => 'admin', "middleware" => "admin"], function () {

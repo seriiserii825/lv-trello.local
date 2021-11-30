@@ -9,16 +9,20 @@ class CardSelect extends Component
     public $card;
     public $slug;
     public $columns;
+    public $delete;
+    public $name;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($card, $slug, $columns)
+    public function __construct($card, $slug, $columns, $name, $delete = false)
     {
         $this->card = $card;
         $this->slug = $slug;
         $this->columns = $columns;
+        $this->delete = $delete;
+        $this->name = $name;
     }
 
     /**

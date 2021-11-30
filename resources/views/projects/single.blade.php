@@ -2,7 +2,11 @@
 @section('content')
     <div class="single-project" style="background: {{ $project->color }}">
         <div class="container">
-            <h2 class="single-project__title">{{ $project->title }}</h2>
+            <a href="{{ route('project.index') }}">All Projects</a>
+            <hr>
+            <h2 class="single-project__title">
+                <span>{{ $project->title }}</span>
+            </h2>
             @if (count($cards))
                 <div class="project-table">
                     <div class="project-table__column">
@@ -10,10 +14,7 @@
                         @foreach ($cards as $card)
                             @if ($card->column_id === 1)
                                 <div class="project-table__row">
-                                    <div class="card">
-                                        <h2>{{ $card->title }}</h2>
-                                        <x-card-select></x-card-select>
-                                    </div>
+                                    <x-card-select :card="$card" :columns="$columns" :slug="$project->slug" :name="$user_name"></x-card-select>
                                 </div>
                             @endif
                         @endforeach
@@ -23,10 +24,7 @@
                         @foreach ($cards as $card)
                             @if ($card->column_id === 2)
                                 <div class="project-table__row">
-                                    <div class="card">
-                                        <h2>{{ $card->title }}</h2>
-
-                                    </div>
+                                    <x-card-select :card="$card" :columns="$columns" :slug="$project->slug" :name="$user_name"></x-card-select>
                                 </div>
                             @endif
                         @endforeach
@@ -36,10 +34,7 @@
                         @foreach ($cards as $card)
                             @if ($card->column_id === 3)
                                 <div class="project-table__row">
-                                    <div class="card">
-                                        <h2>{{ $card->title }}</h2>
-
-                                    </div>
+                                    <x-card-select :card="$card" :columns="$columns" :slug="$project->slug" :name="$user_name"/>
                                 </div>
                             @endif
                         @endforeach
@@ -49,10 +44,7 @@
                         @foreach ($cards as $card)
                             @if ($card->column_id === 4)
                                 <div class="project-table__row">
-                                    <div class="card">
-                                        <h2>{{ $card->title }}</h2>
-
-                                    </div>
+                                    <x-card-select :card="$card" :columns="$columns" :slug="$project->slug" :name="$user_name"/>
                                 </div>
                             @endif
                         @endforeach
@@ -62,10 +54,7 @@
                         @foreach ($cards as $card)
                             @if ($card->column_id === 6)
                                 <div class="project-table__row">
-                                    <div class="card">
-                                        <h2>{{ $card->title }}</h2>
-                                        <x-card-select></x-card-select>
-                                    </div>
+                                    <x-card-select :card="$card" :columns="$columns" :slug="$project->slug" :name="$user_name" :delete="true"/>
                                 </div>
                             @endif
                         @endforeach
