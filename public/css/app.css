@@ -382,6 +382,7 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: 3rem;
 }
 .project__title {
   font-size: 3rem;
@@ -406,22 +407,20 @@ a {
 .project-table {
   width: 100%;
   border-collapse: collapse;
-}
-.project-table tr {
   display: flex;
   justify-content: space-between;
 }
-.project-table td,
-.project-table th {
-  padding: 1rem 2rem;
-  width: 20%;
+.project-table__column {
+  flex: 1;
   border: 1px solid #ccc;
-}
-.project-table th {
   background-color: white;
 }
-.project-table td {
-  background-color: #e4e4ea;
+.project-table__title {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ccc;
+}
+.project-table__row {
+  padding: 1rem 2rem;
 }
 
 .single-project {
